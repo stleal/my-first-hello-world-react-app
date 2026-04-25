@@ -1,73 +1,60 @@
-# React + TypeScript + Vite
+# Natural Disaster Catastrophe Modeling Demo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Deliverable Information
 
-Currently, two official plugins are available:
+- Name: Sam Leal
+- Candidate: Software Engineer
+- Company: Karen and Clark Company, Inc.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Project Summary
 
-## React Compiler
+This project is a React and TypeScript demonstration application focused on natural disaster catastrophe modeling concepts. The current experience includes an overview screen and a dashboard screen designed to explore weather-related operational data such as storm category, wind speed, air pressure, rainfall, and alert state.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The application is intended to serve as a lightweight prototype that demonstrates front-end engineering approach, component structure, and product thinking for a weather and risk modeling workflow.
 
-## Expanding the ESLint configuration
+## Current Scope
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- React base application built with TypeScript, TSX, and Vite
+- Bootstrap and Bootswatch Cerulean styling
+- Overview screen for product framing and roadmap
+- Dashboard screen with storm summary cards
+- Wind speed sample data for the past 7 days
+- Air pressure sample data for the past 7 days
+- Rainfall sample data for the past 7 days
+- Alert-state summary panel for storm operations concepts
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Product Direction
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+This prototype explores a possible catastrophe modeling interface for:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- Storm alerts and operational awareness
+- 7-day forecast and futurecast views
+- Wind speed and low-pressure tracking
+- Rainfall and flooding risk visibility
+- Physics and simulation concepts for extreme weather modeling
+- Data visualizations such as charts, trend panels, and ranked risk summaries
+
+## Technology Stack
+
+- React 19
+- TypeScript
+- Vite
+- Bootstrap 5
+- Bootswatch Cerulean
+
+## Run The Project
+
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Build The Project
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run build
 ```
+
+## Deliverable Goal
+
+The goal of this deliverable is to present a clear, extensible front-end foundation for a catastrophe modeling application that can be reviewed, discussed, and expanded into later development phases.
