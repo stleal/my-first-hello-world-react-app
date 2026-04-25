@@ -150,6 +150,75 @@ a {
   box-shadow: 0 1rem 2rem rgba(13, 110, 253, 0.12);
 }
 
+.storm-search-panel {
+  background:
+    radial-gradient(circle at top right, rgba(13, 110, 253, 0.08), transparent 22rem),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(243, 249, 255, 0.96));
+}
+
+.storm-results-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding: 0.75rem 1rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(13, 110, 253, 0.12);
+  color: #35556a;
+  font-weight: 600;
+  box-shadow: 0 0.85rem 1.75rem rgba(24, 72, 105, 0.08);
+}
+
+.storm-search-input,
+.storm-row-filter {
+  border-radius: 1rem;
+  border-color: rgba(44, 107, 138, 0.2);
+  box-shadow: 0 0.5rem 1.5rem rgba(24, 72, 105, 0.05);
+}
+
+.storm-search-input:focus,
+.storm-row-filter:focus {
+  border-color: rgba(13, 110, 253, 0.35);
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.15);
+}
+
+.storm-table-wrap {
+  border: 1px solid rgba(44, 107, 138, 0.12);
+  border-radius: 1.25rem;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.storm-table thead th {
+  white-space: nowrap;
+  padding: 1rem 1rem;
+  background: #eaf3fb;
+  border-bottom-color: rgba(44, 107, 138, 0.16);
+  color: #37576c;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.storm-table tbody td {
+  padding: 1rem;
+  vertical-align: middle;
+}
+
+.storm-table tbody tr:nth-of-type(even) {
+  background: rgba(234, 243, 251, 0.45);
+}
+
+.storm-table tbody tr:hover {
+  background: rgba(13, 110, 253, 0.06);
+}
+
+.storm-risk-badge {
+  min-width: 6.5rem;
+  color: #35556a;
+}
+
 @media (max-width: 767.98px) {
   .navbar-nav {
     width: 100%;
@@ -176,5 +245,9 @@ a {
 
   .app-nav-cta {
     text-align: center;
+  }
+
+  .storm-results-chip {
+    width: 100%;
   }
 }

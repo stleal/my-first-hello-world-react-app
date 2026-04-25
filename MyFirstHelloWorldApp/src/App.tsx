@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Dashboard from './components/Dashboard'
+import StormSearch from './components/StormSearch'
 
 const forecastHighlights = [
   '7-day forecast and 7-day futurecast',
@@ -17,11 +18,29 @@ const modelingLab = [
 
 const deliveryRoadmap = ['Phase 1', 'Phase 2', 'Phase 3', 'Go live with KCC development handoff']
 
-const menuItems = ['Overview', 'Dashboard'] as const
+const menuItems = ['Overview', 'Dashboard', 'Search'] as const
+
+const viewDetails = {
+  Overview: {
+    statusLabel: 'Project overview screen',
+    ctaLabel: 'Jump to roadmap',
+    ctaHref: '#roadmap',
+  },
+  Dashboard: {
+    statusLabel: 'Storm operations dashboard screen',
+    ctaLabel: 'Review storm summary',
+    ctaHref: '#storm-summary',
+  },
+  Search: {
+    statusLabel: 'Storm search and advisory table',
+    ctaLabel: 'Open storm table',
+    ctaHref: '#storm-search-table',
+  },
+} as const
 
 function App() {
   const [activeView, setActiveView] = useState<(typeof menuItems)[number]>('Overview')
-  const statusLabel = activeView === 'Overview' ? 'Project overview screen' : 'Storm operations dashboard screen'
+  const currentView = viewDetails[activeView]
 
   return (
     <div className="app-shell">
@@ -39,7 +58,7 @@ function App() {
             <div className="d-flex flex-column flex-lg-row align-items-start align-items-lg-center gap-3 ms-lg-auto w-100 app-nav-cluster">
               <div className="app-status-chip">
                 <span className="app-status-dot" aria-hidden="true" />
-                <span>{statusLabel}</span>
+                <span>{currentView.statusLabel}</span>
               </div>
 
               <ul className="navbar-nav flex-row flex-wrap gap-1 gap-md-2 app-menu-bar">
@@ -58,8 +77,8 @@ function App() {
                 ))}
               </ul>
 
-              <a className="btn btn-sm rounded-pill app-nav-cta" href={activeView === 'Overview' ? '#roadmap' : '#storm-summary'}>
-                {activeView === 'Overview' ? 'Jump to roadmap' : 'Review storm summary'}
+              <a className="btn btn-sm rounded-pill app-nav-cta" href={currentView.ctaHref}>
+                {currentView.ctaLabel}
               </a>
             </div>
           </div>
@@ -146,8 +165,10 @@ function App() {
                   </div>
                 </div>
               </section>
-            ) : (
+            ) : activeView === 'Dashboard' ? (
               <Dashboard />
+            ) : (
+              <StormSearch />
             )}
           </div>
         </div>
